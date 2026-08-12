@@ -1,0 +1,77 @@
+{
+  "experiment": 2,
+  "parameters": {
+    "S0": 100.0,
+    "T": 1.0,
+    "sigma": 2.0,
+    "dt": 0.005,
+    "A": 140.0,
+    "k": 1.5,
+    "n_paths": 1000,
+    "n_steps": 200,
+    "gamma_values": [
+      0.1,
+      0.01,
+      0.5
+    ],
+    "c_formula": "c = (1/gamma) * ln(1 + gamma/k)",
+    "spread_formula": "gamma * sigma^2 * (T - t) + 2c"
+  },
+  "using_src": true,
+  "results": [
+    {
+      "Strategy": "Inventory",
+      "Gamma": 0.1,
+      "Spread_type": "inventory-skewed",
+      "mean_profit": 65.05554536976824,
+      "std_profit": 6.768963636346836,
+      "mean_q": 0.058,
+      "std_q": 2.9692820681100676
+    },
+    {
+      "Strategy": "Symmetric",
+      "Gamma": 0.1,
+      "Spread_type": "symmetric-centered",
+      "mean_profit": 68.10998869686766,
+      "std_profit": 13.106216687235841,
+      "mean_q": -0.236,
+      "std_q": 8.050360488822845
+    },
+    {
+      "Strategy": "Inventory",
+      "Gamma": 0.01,
+      "Spread_type": "inventory-skewed",
+      "mean_profit": 68.40365766010845,
+      "std_profit": 9.253047495912575,
+      "mean_q": 0.077,
+      "std_q": 5.147142022520847
+    },
+    {
+      "Strategy": "Symmetric",
+      "Gamma": 0.01,
+      "Spread_type": "symmetric-centered",
+      "mean_profit": 68.52947174993234,
+      "std_profit": 13.539711469969216,
+      "mean_q": -0.18,
+      "std_q": 8.531447708331804
+    },
+    {
+      "Strategy": "Inventory",
+      "Gamma": 0.5,
+      "Spread_type": "inventory-skewed",
+      "mean_profit": 48.618961938371555,
+      "std_profit": 5.7456157281388425,
+      "mean_q": 0.026,
+      "std_q": 2.0241847741745316
+    },
+    {
+      "Strategy": "Symmetric",
+      "Gamma": 0.5,
+      "Spread_type": "symmetric-centered",
+      "mean_profit": 58.57627912182389,
+      "std_profit": 11.646967821014096,
+      "mean_q": 0.15,
+      "std_q": 6.847152692908199
+    }
+  ]
+}

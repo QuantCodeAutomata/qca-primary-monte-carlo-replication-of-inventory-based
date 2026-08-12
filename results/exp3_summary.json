@@ -1,0 +1,72 @@
+{
+  "experiment": 3,
+  "description": "Numerical Ambiguity and Discretization Sensitivity Study",
+  "parameters": {
+    "S0": 100.0,
+    "T": 1.0,
+    "sigma": 2.0,
+    "dt": 0.005,
+    "A": 140.0,
+    "k": 1.5,
+    "n_paths": 1000
+  },
+  "gamma_values": [
+    0.1,
+    0.01,
+    0.5
+  ],
+  "n_total_runs": 48,
+  "baseline": {
+    "event_rule": "bernoulli",
+    "price_rule": "binomial",
+    "edge_rule": "log_only"
+  },
+  "variant_dimensions": {
+    "event_rule": [
+      "bernoulli",
+      "exact_poisson"
+    ],
+    "price_rule": [
+      "binomial",
+      "gaussian"
+    ],
+    "edge_rule": [
+      "log_only",
+      "clip_zero"
+    ]
+  },
+  "dimension_impact_on_mean_profit": {
+    "event_rule": 9.086902651085682,
+    "price_rule": 5.764495731235878,
+    "edge_rule": 7.4510584861060885
+  },
+  "dimension_impact_on_std_profit": {
+    "event_rule": 0.5147791817964102,
+    "price_rule": 0.48697884156954846,
+    "edge_rule": 0.34016689413975104
+  },
+  "dominant_dimension_mean_profit": "event_rule",
+  "dominant_dimension_std_profit": "event_rule",
+  "per_gamma_inventory_baseline": {
+    "0.1": {
+      "mean_profit": 64.28874283990818,
+      "std_profit": 6.128512747459554,
+      "neg_delta_count": 2497,
+      "lambda_dt_gt1_count": 75
+    },
+    "0.01": {
+      "mean_profit": 68.52139109881328,
+      "std_profit": 9.127660512215595,
+      "neg_delta_count": 0,
+      "lambda_dt_gt1_count": 0
+    },
+    "0.5": {
+      "mean_profit": 23.945092598438922,
+      "std_profit": 5.219208540549052,
+      "neg_delta_count": 45437,
+      "lambda_dt_gt1_count": 36295
+    }
+  },
+  "max_delta_mean_profit": 27.924308676068723,
+  "max_delta_std_profit": 1.0575937769335315
+}
